@@ -1,7 +1,5 @@
-FROM ghcr.io/eclipse-ee4j/glassfish:7.0.11
-
-COPY dist/Stratify.war /usr/local/glassfish7/glassfish/domains/domain1/autodeploy/Stratify.war
-
-EXPOSE 8080 4848
-
-CMD ["asadmin", "start-domain", "-v"]
+FROM tomcat:10.1-jdk17-temurin
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+COPY Stratify.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
