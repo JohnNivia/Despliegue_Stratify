@@ -1,4 +1,4 @@
-FROM ghcr.io/eclipse-ee4j/glassfish:7.0.11-jdk17
+FROM ghcr.io/eclipse-ee4j/glassfish:7.0.11
 
 COPY dist/Stratify.war /usr/local/glassfish7/glassfish/domains/domain1/autodeploy/Stratify.war
 
